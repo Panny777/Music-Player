@@ -1,7 +1,8 @@
 from tkinter import *
 import pygame
-import emoji
 import os
+from os import path
+import pathlib
 
 root = Tk() # In order to create an empty window
 # Passing Root to MusicPlayer Class
@@ -101,7 +102,10 @@ class MusicPlayer:
         self.playlist.pack(fill=BOTH)
 
         # Changing Directory for fetching Songs
-        os.chdir("/Multimedia/Musics")
+        filepath = pathlib.Path(__file__).resolve().parent
+        filepath = str(filepath) + "\Musics"
+
+        os.chdir(filepath)
 
         # Fetching Songs
         songtracks = os.listdir()
@@ -109,6 +113,7 @@ class MusicPlayer:
         # Inserting Songs into Playlist
         for track in songtracks:
             self.playlist.insert(END, track)
+            print(len(songtracks))
 
 
     def playsong(self):
