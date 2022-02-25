@@ -4,4 +4,4 @@ The windows executable file is found in the Windows App folder
 
 muniru.panya13@gmail.com
 
-http://www.pannytech.com
+https://www.pannytech.com
